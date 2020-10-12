@@ -2,14 +2,15 @@
   "name": "frontend-project-lvl2",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
-  "type": "module",
+  "main": "src/index.js",
   "bin": {
     "gendiff": "src/bin/gendiff.js"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel src -d lib"
   },
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/andreikhanau/frontend-project-lvl2.git"
@@ -21,9 +22,17 @@
   },
   "homepage": "https://github.com/andreikhanau/frontend-project-lvl2#readme",
   "dependencies": {
-    "commander": "^6.1.0"
+    "@babel/polyfill": "^7.11.5",
+    "commander": "^6.1.0",
+    "lodash": "^4.17.20"
   },
   "devDependencies": {
-    "eslint": "^7.8.1"
+    "eslint": "^7.9.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-react": "^7.20.6",
+    "eslint-plugin-react-hooks": "^4.0.0"
   }
 }
