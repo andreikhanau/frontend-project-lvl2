@@ -8,9 +8,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 const getFilePath = (filename) => path.join(__dirname, '..', '__tests__', '__fixtures__', filename);
-const filepath1 = getFilePath('file1.json');
-const filepath2 = getFilePath('file2.json');
 const correctResult = extractData(getFilePath('flatJsonTestResult'));
-test('gendiff flatJSONFile test', () => {
-  expect(gendiff(filepath1, filepath2)).toBe(correctResult);
+test('gendiff flatJSONFile comparison test', () => {
+  expect(gendiff(getFilePath('file3.json'), getFilePath('file4.json'))).toBe(correctResult);
 });
