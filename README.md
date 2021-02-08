@@ -22,4 +22,8 @@ make link
 > gendiff --format json file1.json file2.json
 
 [Watch asciinema](https://asciinema.org/a/EBbshCw36FP7yMqzvVvsF0cXN)
+#### The deafult format is stylish:
+> genfiff file1.json file2.json
+
+[Watch asciinema](https://asciinema.org/a/gpHNEteIvWLdllTvRMMyi3bOC)
 
