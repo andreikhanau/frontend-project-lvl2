@@ -8,8 +8,6 @@ const parseTheFile = (pathToFile) => {
     parse = JSON.parse;
   } else if (format === '.yml') {
     parse = yaml.safeLoad;
-  } else if (format === '.ini') {
-    parse = ini.parse;
   }
   return parse;
 };
