@@ -10,7 +10,7 @@ import makeDiff from './makeDiff.js';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const getFilePath = (fileName) => path.join(__dirname, '..', '__tests__', '__fixtures__', fileName);
-const extractData = (pathToFile) => fs.readFileSync(getFilePath(pathToFile), 'utf-8');
+const extractData = (file) => fs.readFileSync(getFilePath(file), 'utf-8');
 const gendiff = (pathToFile1, pathToFile2, outputFormat = 'stylish') => {
   const extractFile1 = extractData(pathToFile1);
   const extractFile2 = extractData(pathToFile2);
@@ -19,4 +19,4 @@ const gendiff = (pathToFile1, pathToFile2, outputFormat = 'stylish') => {
   const diff = makeDiff(file1, file2);
   return render(diff, outputFormat);
 };
-export { gendiff, extractData };
+export default gendiff;
