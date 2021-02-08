@@ -10,6 +10,9 @@ make install
 make link
 ```
 ### Example of usage:
+```
+gendiff --format <format of your choosing('stylish', 'plain' or 'json', default format is 'stylish')> <path to the first file> <path to the second file>
+```
 #### 'Stylish' format:
 ```
 gendiff --format stylish file1.json file2.json
