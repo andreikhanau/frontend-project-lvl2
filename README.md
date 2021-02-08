@@ -9,3 +9,6 @@
 make install
 make link
 ```
+### Usage:
+#### 'Stylish' format:
+<script id="asciicast-tXqY5TOUuB1RCiIYR47WIe5s8" src="https://asciinema.org/a/tXqY5TOUuB1RCiIYR47WIe5s8.js" async></script>
