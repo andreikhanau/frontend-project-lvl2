@@ -11,19 +11,25 @@ make link
 ```
 ### Example of usage:
 #### 'Stylish' format:
-> gendiff --format stylish file1.json file2.json
+```
+gendiff --format stylish file1.json file2.json
+```
 
 [Watch asciinema](https://asciinema.org/a/tXqY5TOUuB1RCiIYR47WIe5s8)
 #### 'Plain' format:
-> gendiff --format plain file1.json file2.json
-
+```
+ gendiff --format plain file1.json file2.json
+```
 [Watch asciinema](https://asciinema.org/a/PKOvG5o29AaJBD6zD86Dvc9Df)
 #### 'Json' format:
-> gendiff --format json file1.json file2.json
-
+``` 
+gendiff --format json file1.json file2.json
+```
 [Watch asciinema](https://asciinema.org/a/EBbshCw36FP7yMqzvVvsF0cXN)
 #### The deafult format is stylish:
-> genfiff file1.json file2.json
+```
+gendiff file1.json file2.json
+```
 
 [Watch asciinema](https://asciinema.org/a/gpHNEteIvWLdllTvRMMyi3bOC)
 
