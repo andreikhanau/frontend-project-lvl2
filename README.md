@@ -18,7 +18,7 @@ gendiff --format stylish file1.json file2.json
 [Watch asciinema](https://asciinema.org/a/tXqY5TOUuB1RCiIYR47WIe5s8)
 #### 'Plain' format:
 ```
- gendiff --format plain file1.json file2.json
+gendiff --format plain file1.json file2.json
 ```
 [Watch asciinema](https://asciinema.org/a/PKOvG5o29AaJBD6zD86Dvc9Df)
 #### 'Json' format:
