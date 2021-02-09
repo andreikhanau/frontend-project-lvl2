@@ -1,5 +1,3 @@
-/* eslint-disable no-underscore-dangle */
-import fs from 'fs';
 import path from 'path';
 import { dirname } from 'path';
 import { fileURLToPath } from 'url';

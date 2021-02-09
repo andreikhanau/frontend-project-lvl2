@@ -1,4 +1,3 @@
-/* eslint-disable no-underscore-dangle */
 import { dirname } from 'path';
 import path from 'path';
 import fs from 'fs';
