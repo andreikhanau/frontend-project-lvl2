@@ -8,7 +8,7 @@ import makeDiff from './makeDiff.js';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const getFilePath = (fileName) => path.join(__dirname, '..', '__fixtures__', fileName);
-const extractData = (file) => fs.readFileSync(getFilePath(file), 'utf-8');
+const extractData = (file) => fs.readFileSync(file, 'utf-8');
 const gendiff = (pathToFile1, pathToFile2, outputFormat = 'stylish') => {
   const extractFile1 = extractData(pathToFile1);
   const extractFile2 = extractData(pathToFile2);
