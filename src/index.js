@@ -1,6 +1,7 @@
 import path from 'path';
 import { dirname } from 'path';
 import { fileURLToPath } from 'url';
+import fs from 'fs';
 import parseTheFile from './parsers.js';
 import render from './formatters/index.js';
 import makeDiff from './makeDiff.js';
