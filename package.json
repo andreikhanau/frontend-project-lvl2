@@ -7,7 +7,7 @@
     "gendiff": "src/bin/gendiff.js"
   },
   "scripts": {
-    "test": "jest"
+    "test": "npx jest"
   },
   "type": "module",
   "repository": {
