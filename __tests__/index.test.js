@@ -26,3 +26,9 @@ test('gendiff plain format test for .yml file', () => {
 test('gendiff json format test for .yml file', () => {
   expect(gendiff(getFilePath('file1.yml'), getFilePath('file2.yml'), 'json')).toBe(getTestResult('jsonResult'));
 });
+test('gendiff default format test for .yml file', () => {
+  expect(gendiff(getFilePath('file1.yml'), getFilePath('file2.yml'))).toBe(getTestResult('stylishResult'));
+});
+test('gendiff default format test for .json file', () => {
+  expect(gendiff(getFilePath('file1.json'), getFilePath('file2.json'))).toBe(getTestResult('stylishResult'));
+});
