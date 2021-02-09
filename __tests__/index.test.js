@@ -1,13 +1,12 @@
-import { dirname } from 'path';
 import path from 'path';
 import fs from 'fs';
 import { fileURLToPath } from 'url';
 import gendiff from '../src/index';
 
 const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+const __dirname = path.dirname(__filename);
 const extractData = (pathToFile) => fs.readFileSync(pathToFile, 'utf-8');
-const getFilePath = (fileName) => path.join(__dirname, '..', '__tests__', '__fixtures__', fileName);
+const getFilePath = (fileName) => path.join(__dirname, '..', '__fixtures__', fileName);
 const getTestResult = (resultFileName) => extractData(getFilePath(resultFileName));
 test('gendiff stylish format test for .json file', () => {
   expect(gendiff('file1.json', 'file2.json', 'stylish')).toBe(getTestResult('stylishResult'));
