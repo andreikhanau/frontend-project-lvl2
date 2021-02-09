@@ -1,6 +1,5 @@
 {
   "name": "@hexlet/code",
-  "module": "@hexlet/code",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -26,7 +25,6 @@
     "transform": {}
   },
   "dependencies": {
-    "@babel/polyfill": "^7.11.5",
     "commander": "^6.1.0",
     "js-yaml": "^3.14.1",
     "lodash": "^4.17.20"
