@@ -1,23 +1,23 @@
 install:  
 		 
-		 npm install
+	npm install
 
 publish:
 		 
-		 npm publish --dry-run
+	npm publish --dry-run
 
 link:	 
 		 
-		 npm link	
+	npm link	
 
 lint:
 
-		 npx eslint .
+	npx eslint .
 
 test:    
 		 
-		 npx -n --experimental-vm-modules jest
+	npm run test
 
 test-coverage: 
-
-		 npx -n --experimental-vm-modules jest --coverage --coverageProvider=v8
+	
+	npx -n --experimental-vm-modules jest --coverage --coverageProvider=v8
