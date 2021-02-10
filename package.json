@@ -10,7 +10,7 @@
   },
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "/Users/andreikhanau/Desktop/@hexlet:code/src/index.js",
   "bin": {
     "gendiff": "src/bin/gendiff.js"
   },
