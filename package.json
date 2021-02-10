@@ -5,7 +5,7 @@
     "testEnvironment": "node",
     "transform": {},
     "modulePaths": [
-      "<rootDir>/frontend-project-lvl2/"
+      "<rootDir>"
     ]
   },
   "version": "1.0.0",
