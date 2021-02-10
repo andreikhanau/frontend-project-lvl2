@@ -1,5 +1,13 @@
 {
   "name": "@hexlet/code",
+  "jest": {
+    "verbose": true,
+    "testEnvironment": "node",
+    "transform": {},
+    "modulePaths": [
+      "<rootDir>/frontend-project-lvl2/"
+    ]
+  },
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -20,10 +28,6 @@
     "url": "https://github.com/andreikhanau/frontend-project-lvl2/issues"
   },
   "homepage": "https://github.com/andreikhanau/frontend-project-lvl2#readme",
-  "jest": {
-    "testEnvironment": "node",
-    "transform": {}
-  },
   "dependencies": {
     "commander": "^6.1.0",
     "js-yaml": "^3.14.1",
