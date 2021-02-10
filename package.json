@@ -22,7 +22,10 @@
   "homepage": "https://github.com/andreikhanau/frontend-project-lvl2#readme",
   "jest": {
     "testEnvironment": "node",
-    "transform": {}
+    "transform": {},
+    "modulePaths": [
+      "<rootDir>"
+    ]
   },
   "dependencies": {
     "commander": "^6.1.0",
