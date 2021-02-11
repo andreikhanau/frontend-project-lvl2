@@ -14,15 +14,19 @@ const formatters = ['stylish', 'plain', 'json'];
 const jsonFile1 = getFilePath('file1.json');
 const jsonFile2 = getFilePath('file2.json');
 const ymlFile1 = getFilePath('file1.yml');
-const ymlfile2 = getFilePath('file2.yml');
+const ymlFile2 = getFilePath('file2.yml');
 
 test('gendiff tests for "json" files', () => {
-  expect(formatters.forEach((format) => gendiff(jsonFile1, jsonFile2, format))).toBe(resultFiles.forEach((result) => getTestResult(result)));
+  expect(formatters.forEach((format) => gendiff(jsonFile1, jsonFile2, format))).toBe(
+    resultFiles.forEach((result) => getTestResult(result)),
+  );
 });
 test('gendiff tests for "yml" files', () => {
-  expect(formatters.forEach((format) => gendiff(ymlFile1, ymlfile2, format))).toBe(resultFiles.forEach((result) => getTestResult(result)));
+  expect(formatters.forEach((format) => gendiff(ymlFile1, ymlFile2, format))).toBe(
+    resultFiles.forEach((result) => getTestResult(result)),
+  );
 });
 test('gendiff tests for default format', () => {
-  expect(gendiff(ymlFile1, ymlfile2)).toBe(getTestResult('stylishResult'));
+  expect(gendiff(ymlFile1, ymlFile2)).toBe(getTestResult('stylishResult'));
   expect(gendiff(jsonFile1, jsonFile2)).toBe(getTestResult('stylishResult'));
 });
