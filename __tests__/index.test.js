@@ -6,29 +6,23 @@ import gendiff from '../src/index.js';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const extractData = (pathToFile) => fs.readFileSync(pathToFile, 'utf-8');
-const getFilePath = (fileName) => path.join(__dirname, '..', '__fixtures__', fileName);
+const getFilePath = (fileName) => path.join(__dirname, '..', '__tests__', '__fixtures__', fileName);
 const getTestResult = (resultFileName) => extractData(getFilePath(resultFileName));
-test('gendiff stylish format test for .json file', () => {
-  expect(gendiff(getFilePath('file1.json'), getFilePath('file2.json'), 'stylish')).toBe(getTestResult('stylishResult'));
+
+const resultFiles = ['stylishResult', 'plainResult', 'jsonResult'];
+const formatters = ['stylish', 'plain', 'json'];
+const jsonFile1 = getFilePath('file1.json');
+const jsonFile2 = getFilePath('file2.json');
+const ymlFile1 = getFilePath('file1.yml');
+const ymlfile2 = getFilePath('file2.yml');
+
+test('gendiff tests for "json" files', () => {
+  expect(formatters.forEach((format) => gendiff(jsonFile1, jsonFile2, format))).toBe(resultFiles.forEach((result) => getTestResult(result)));
 });
-test('gendiff plain format test for .json file', () => {
-  expect(gendiff(getFilePath('file1.json'), getFilePath('file2.json'), 'plain')).toBe(getTestResult('plainResult'));
+test('gendiff tests for "yml" files', () => {
+  expect(formatters.forEach((format) => gendiff(ymlFile1, ymlfile2, format))).toBe(resultFiles.forEach((result) => getTestResult(result)));
 });
-test('gendiff json format test for .json file', () => {
-  expect(gendiff(getFilePath('file1.json'), getFilePath('file2.json'), 'json')).toBe(getTestResult('jsonResult'));
-});
-test('gendiff stylish format test for .yml file', () => {
-  expect(gendiff(getFilePath('file1.yml'), getFilePath('file2.yml'), 'stylish')).toBe(getTestResult('stylishResult'));
-});
-test('gendiff plain format test for .yml file', () => {
-  expect(gendiff(getFilePath('file1.yml'), getFilePath('file2.yml'), 'plain')).toBe(getTestResult('plainResult'));
-});
-test('gendiff json format test for .yml file', () => {
-  expect(gendiff(getFilePath('file1.yml'), getFilePath('file2.yml'), 'json')).toBe(getTestResult('jsonResult'));
-});
-test('gendiff default format test for .yml file', () => {
-  expect(gendiff(getFilePath('file1.yml'), getFilePath('file2.yml'))).toBe(getTestResult('stylishResult'));
-});
-test('gendiff default format test for .json file', () => {
-  expect(gendiff(getFilePath('file1.json'), getFilePath('file2.json'))).toBe(getTestResult('stylishResult'));
+test('gendiff tests for default format', () => {
+  expect(gendiff(ymlFile1, ymlfile2)).toBe(getTestResult('stylishResult'));
+  expect(gendiff(jsonFile1, jsonFile2)).toBe(getTestResult('stylishResult'));
 });
