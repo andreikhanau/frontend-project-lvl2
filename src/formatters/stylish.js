@@ -19,12 +19,12 @@ const stringify = (value, depth) => {
 };
 
 const makeStylish = (ast) => {
-  const displayDiff = (node, depth) => node.map((item) => {
+  const displayDiff = (node, depth) => node.flatMap((item) => {
     const {
-      name, status, value, previousValue, newValue, children,
+      name, type, value, previousValue, newValue, children,
     } = item;
     const margin = setMargin(depth);
-    switch (status) {
+    switch (type) {
       case 'Nested':
         return `${margin}  ${name}: {\n${displayDiff(children, depth + 1)}\n${margin}  }`.split(',');
       case 'Unchanged':
@@ -35,11 +35,11 @@ const makeStylish = (ast) => {
         return `${margin}- ${name}: ${stringify(value, depth + 1)}`;
       case 'Added':
         return `${margin}+ ${name}: ${stringify(value, depth + 1)}`;
-      default: throw new Error('Undefined status');
+      default: throw new Error(`Undefined type ${type}`);
     }
   });
   const initialDepth = 1;
-  const result = _.flatten(displayDiff(ast, initialDepth));
+  const result = displayDiff(ast, initialDepth);
   return `{\n${result.join('\n')}\n}`;
 };
 export default makeStylish;

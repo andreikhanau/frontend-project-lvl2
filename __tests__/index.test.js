@@ -6,7 +6,7 @@ import gendiff from '../src/index.js';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const extractData = (pathToFile) => fs.readFileSync(pathToFile, 'utf-8');
-const getFilePath = (fileName) => path.join(__dirname, '..', '__tests__', '__fixtures__', fileName);
+const getFilePath = (fileName) => path.join(__dirname, '..', '__fixtures__', fileName);
 const getTestResult = (resultFileName) => extractData(getFilePath(resultFileName));
 
 const resultFiles = ['stylishResult', 'plainResult', 'jsonResult'];

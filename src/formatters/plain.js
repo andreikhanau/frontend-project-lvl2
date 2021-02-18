@@ -10,11 +10,11 @@ const stringify = (value) => {
 const makePlain = (ast, path = []) => {
   const displayDiff = ast.flatMap((item) => {
     const {
-      name, status, value, previousValue, newValue, children,
+      name, type, value, previousValue, newValue, children,
     } = item;
     const currentPath = [...path, name];
     const startString = `Property '${currentPath.join('.')}' was`;
-    switch (status) {
+    switch (type) {
       case 'Nested':
         return makePlain(children, currentPath);
       case 'Added':
@@ -23,8 +23,10 @@ const makePlain = (ast, path = []) => {
         return `${startString} removed`;
       case 'Changed':
         return `${startString} updated. From ${stringify(previousValue)} to ${stringify(newValue)}`;
+      case 'Unchanged':
+        return null;
       default:
-        return [];
+        throw new Error(`Undefined type ${type}`);
     }
   });
   return displayDiff.join('\n');
