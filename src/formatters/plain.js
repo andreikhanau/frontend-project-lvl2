@@ -29,7 +29,7 @@ const makePlain = (ast, path = []) => {
         throw new Error(`Undefined type ${type}`);
     }
   });
-  return displayDiff.join('\n');
+  return displayDiff.filter((string) => string !== null).join('\n');
 };
 
 export default makePlain;
