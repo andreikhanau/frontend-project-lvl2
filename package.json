@@ -12,7 +12,7 @@
   "description": "",
   "main": "index.js",
   "bin": {
-    "gendiff": "src/bin/gendiff.js"
+    "gendiff": "gendiff.js"
   },
   "scripts": {
     "test": "npx jest"
