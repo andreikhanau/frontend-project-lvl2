@@ -35,7 +35,7 @@ const makeStylish = (ast) => {
         return `${margin}- ${name}: ${stringify(value, depth + 1)}`;
       case 'Added':
         return `${margin}+ ${name}: ${stringify(value, depth + 1)}`;
-      default: throw new Error(`Undefined type ${type}`);
+      default: throw new Error(`Undefined type: ${type}!`);
     }
   });
   const initialDepth = 1;

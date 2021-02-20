@@ -7,7 +7,7 @@ const parseTheFile = (file, ext) => {
     case '.yml':
       return yaml.safeLoad(file);
     default:
-      return 'Unsupported file extension';
+      throw new Error(`Unsupported file extension: ${ext}!`);
   }
 };
 

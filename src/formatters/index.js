@@ -11,7 +11,7 @@ const render = (ast, outputFormat) => {
     case 'json':
       return makeJson(ast);
     default:
-      throw new Error('Unsupported format!');
+      throw new Error(`Unsupported format: ${outputFormat}!`);
   }
 };
 export default render;

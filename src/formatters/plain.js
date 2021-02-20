@@ -26,7 +26,7 @@ const makePlain = (ast, path = []) => {
       case 'Unchanged':
         return null;
       default:
-        throw new Error(`Undefined type ${type}`);
+        throw new Error(`Undefined type: ${type}!`);
     }
   });
   return displayDiff.filter((string) => string !== null).join('\n');
